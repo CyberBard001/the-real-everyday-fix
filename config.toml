@@ -3,10 +3,8 @@ languageCode = "en-us"
 title = "The Real Everyday Fix"
 theme = "PaperMod"
 
-[params]
-  customCSS = ["css/custom.css"]
-
 [params.assets]
+  customCSS = ["css/custom.css"]
   disableScrollBarStyle = false
 
 # Enable shortcodes and modules
