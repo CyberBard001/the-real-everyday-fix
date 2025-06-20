@@ -1,0 +1,29 @@
+<!-- physio-tracker shortcode: numeric input fields for physio exercises, persists to localStorage -->
+<div class="physio-box">
+  <h3>Physio Tracker</h3>
+  <form id="physioTrackerForm">
+    <label>Heel Raises: <input type="number" min="0" id="heelRaises" /></label><br/>
+    <label>Hamstring Stretches: <input type="number" min="0" id="hamstringStretches" /></label><br/>
+    <label>Glute Bridges: <input type="number" min="0" id="gluteBridges" /></label><br/>
+    <button type="button" class="save-btn" onclick="savePhysio()">Save Physio</button>
+  </form>
+</div>
+<script>
+function savePhysio() {
+  const data = {
+    heelRaises: document.getElementById('heelRaises').value,
+    hamstringStretches: document.getElementById('hamstringStretches').value,
+    gluteBridges: document.getElementById('gluteBridges').value
+  };
+  localStorage.setItem('physioTracker', JSON.stringify(data));
+  alert('Physio progress saved!');
+}
+window.addEventListener('DOMContentLoaded', function() {
+  const data = JSON.parse(localStorage.getItem('physioTracker') || '{}');
+  if(data) {
+    document.getElementById('heelRaises').value = data.heelRaises || '';
+    document.getElementById('hamstringStretches').value = data.hamstringStretches || '';
+    document.getElementById('gluteBridges').value = data.gluteBridges || '';
+  }
+});
+</script>

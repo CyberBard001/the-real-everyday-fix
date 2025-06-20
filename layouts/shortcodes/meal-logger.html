@@ -1,0 +1,35 @@
+<!-- meal-logger shortcode: allows user to log meals, persists to localStorage -->
+<div class="meal-logger-box">
+  <h3>Meal Logger</h3>
+  <form id="mealLoggerForm">
+    <label>Breakfast: <input type="text" id="breakfast" /></label><br/>
+    <label>Lunch: <input type="text" id="lunch" /></label><br/>
+    <label>Dinner: <input type="text" id="dinner" /></label><br/>
+    <label>Drinks: <input type="text" id="drinks" /></label><br/>
+    <label>Snacks: <input type="text" id="snacks" /></label><br/>
+    <button type="button" class="save-btn" onclick="saveMeals()">Save Meals</button>
+  </form>
+</div>
+<script>
+function saveMeals() {
+  const data = {
+    breakfast: document.getElementById('breakfast').value,
+    lunch: document.getElementById('lunch').value,
+    dinner: document.getElementById('dinner').value,
+    drinks: document.getElementById('drinks').value,
+    snacks: document.getElementById('snacks').value
+  };
+  localStorage.setItem('mealLogger', JSON.stringify(data));
+  alert('Meals saved!');
+}
+window.addEventListener('DOMContentLoaded', function() {
+  const data = JSON.parse(localStorage.getItem('mealLogger') || '{}');
+  if(data) {
+    document.getElementById('breakfast').value = data.breakfast || '';
+    document.getElementById('lunch').value = data.lunch || '';
+    document.getElementById('dinner').value = data.dinner || '';
+    document.getElementById('drinks').value = data.drinks || '';
+    document.getElementById('snacks').value = data.snacks || '';
+  }
+});
+</script>
