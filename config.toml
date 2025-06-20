@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://the-real-everyday-fix.netlify.app/"
 languageCode = "en-us"
 title = "The Real Everyday Fix"
 theme = "PaperMod"
