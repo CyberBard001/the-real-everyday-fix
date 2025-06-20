@@ -3,13 +3,11 @@ languageCode = "en-us"
 title = "The Real Everyday Fix"
 theme = "PaperMod"
 
-[module]
-  [[module.imports]]
-    path = "github.com/adityatelange/hugo-PaperMod"
-
 [params]
-  # Add PaperMod params as needed
-  assets = ["css/custom.css"]
+  customCSS = ["css/custom.css"]
+
+[params.assets]
+  disableScrollBarStyle = false
 
 # Enable shortcodes and modules
 [markup]

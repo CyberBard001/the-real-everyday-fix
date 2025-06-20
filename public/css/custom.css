@@ -1,0 +1,168 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --accent: #3b7050;
+  --card-bg: #fff;
+  --card-radius: 16px;
+  --card-shadow: 0 4px 24px 0 rgba(59,112,80,0.07);
+  --section-spacing: 2.5rem;
+  --section-padding: 2rem;
+  --hero-radius: 0 0 24px 24px;
+  --link-hover: #2e5c3f;
+  --button-bg: #3b7050;
+  --button-hover: #28523a;
+  --button-radius: 8px;
+  --button-shadow: 0 2px 8px rgba(59,112,80,0.10);
+  --emoji-size: 1.5em;
+  --bg-soft: #f6faf7;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg-soft);
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-banner {
+  background-image: url('/images/hero-banner.png');
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: var(--hero-radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  display: block;
+  min-height: 100px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Ensure parent containers do not cover the hero banner */
+header.hero-banner {
+  background-image: url('/images/hero-banner.png');
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: var(--hero-radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  display: block;
+  min-height: 100px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+section {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  margin-bottom: var(--section-spacing);
+  padding: var(--section-padding);
+  transition: box-shadow 0.2s;
+}
+
+section:hover {
+  box-shadow: 0 8px 32px 0 rgba(59,112,80,0.13);
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+button, .save-btn {
+  background: var(--button-bg);
+  color: #fff;
+  border: none;
+  border-radius: var(--button-radius);
+  padding: 0.6em 1.4em;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: 600;
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 1em;
+}
+
+button:hover, .save-btn:hover {
+  background: var(--button-hover);
+  box-shadow: 0 4px 16px 0 rgba(59,112,80,0.18);
+}
+
+.tracker-box, .physio-box, .meal-logger-box {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--card-radius);
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: #fafbfc;
+  box-shadow: var(--card-shadow);
+}
+
+.tracker-box input[type="checkbox"],
+.physio-box input[type="number"],
+.meal-logger-box input[type="text"] {
+  margin-right: 0.5em;
+}
+
+.tracker-box label.completed {
+  text-decoration: line-through;
+  color: var(--accent);
+}
+
+.emoji {
+  font-size: var(--emoji-size);
+  vertical-align: middle;
+  margin-right: 0.4em;
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 1em;
+  }
+  .hero-banner {
+    height: 140px;
+    border-radius: 0 0 16px 16px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+}
